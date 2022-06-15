@@ -1,6 +1,17 @@
 import '../sass/index.scss';
 import Tween from 'gsap';
 
+const progress = document.querySelector('#progress');
+const goal = 58000;
+const current = 14937 + 14409;
+const percent = (( current / goal ) * 100).toFixed(0);
+
+progress.innerHTML = `${percent}%`;
+Tween.to(progress, {
+	width: `${percent}%`,
+});
+progress.setAttribute('aria-valuenow', percent);
+
 const boxes = document.querySelectorAll('.copy-box');
 if (!!boxes.length) {
 	for (let i = 0; i < boxes.length; i++) {
@@ -36,3 +47,5 @@ if (!!boxes.length) {
 		});
 	}
 }
+
+//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

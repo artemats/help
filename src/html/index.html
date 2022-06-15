@@ -26,13 +26,17 @@
 <body>
 <main id="wrapper" class="p-4">
 	<div class="form">
-		<div class="mb-3 copy-box">
-			<label for="pryvat" class="form-label h3">Приватбанк</label>
+		<div class="mb-5 copy-box">
+			<label for="pryvat" class="form-label h3 d-flex align-items-center">
+				<img src="../images/privatbank.svg" class="bank-logo" alt="Приватбанк"/>
+			</label>
 			<input type="email" class="form-control copy-input" id="pryvat" value="5168745022258989" readonly/>
 			<button type="button" class="btn btn-primary mt-2 copy-btn">Скопіювати</button>
 		</div>
 		<div class="mb-3 copy-box">
-			<label for="mono" class="form-label h3">Монобанк</label>
+			<label for="mono" class="form-label h3 d-flex align-items-center">
+				<img src="../images/monobank.svg" class="bank-logo" alt="Монобанк"/>
+			</label>
 			<input type="email" class="form-control copy-input" id="mono" value="5375411417464968" readonly/>
 			<button type="button" class="btn btn-primary mt-2 copy-btn">Скопіювати</button>
 		</div>
@@ -43,6 +47,17 @@
 					<h5 class="mb-1">Мацерук Артем</h5>
 					<h5 class="mb-1">Artem Matseruk</h5>
 				</div>
+			</div>
+		</div>
+		<div class="mb-3">
+			<h4 class="mb-2">Результат</h4>
+			<div class="progress">
+				<div class="progress-bar bg-success"
+				     id="progress"
+				     role="progressbar"
+				     aria-valuenow="51"
+				     aria-valuemin="0"
+				     aria-valuemax="100">0%</div>
 			</div>
 		</div>
 	</div>
