@@ -1,62 +1,38 @@
 import '../sass/index.scss';
-import {preload} from "./content/preload";
-import {scrollListener} from "./scroll/scrollListener";
-import {initBannersCarousel} from "./carousel/initBannersCarousel";
-import {initProductCarousel} from "./carousel/initProductCarousel";
-import {initAccordion} from "./content/initAccordion";
-import {initVimeoPlayer} from "./content/video/vimeoVideoPlayer";
-import {loadVimeoPlayer} from "./content/video/loadVimeoPlayer";
-import {setStickyBannerPosition} from "./content/images/setStickyBannerPosition";
-import {initReviewsCarousel} from "./carousel/initReviewsCarousel";
-import {subscribeFormValidation} from "./validation/subscribeForm";
-import {attachmentSwitcher} from "./content/attachmentSwitcher";
-import {initCompareCarousel} from "./carousel/initCompareCarousel";
-import {initReviewsCommentsCarousel} from "./carousel/initReviewsCommentsCarousel";
-import {closeNav, toggleNavListener} from "./content/toggleNav";
+import Tween from 'gsap';
 
-scrollListener();
+const boxes = document.querySelectorAll('.copy-box');
+if (!!boxes.length) {
+	for (let i = 0; i < boxes.length; i++) {
+		const btn = boxes[i].querySelector('.copy-btn');
+		const input = boxes[i].querySelector('.copy-input');
 
-/*
-Require svg icons to stripe
- */
-function requireAll(r) {
-	r.keys().forEach(r);
+		btn.addEventListener('click', () => {
+			input.focus();
+			input.select();
+
+			try {
+				const successful = document.execCommand('copy');
+				if (successful) {
+					Tween.to(document.querySelector('#success'), {
+						display: 'block',
+					});
+					setTimeout(() => {
+						Tween.to(document.querySelector('#success'), {
+							display: 'none',
+						});
+					}, 3000);
+				}
+			} catch (error) {
+				Tween.to(document.querySelector('#danger'), {
+					display: 'block',
+				});
+				setTimeout(() => {
+					Tween.to(document.querySelector('#danger'), {
+						display: 'none',
+					});
+				}, 3000);
+			}
+		});
+	}
 }
-
-requireAll(require.context('../images/icons/', true, /\.svg$/));
-
-/*
-Splide.js carousels
- */
-initBannersCarousel();
-initProductCarousel();
-initReviewsCarousel();
-initCompareCarousel();
-initReviewsCommentsCarousel();
-
-/*
-Content
- */
-initAccordion();
-loadVimeoPlayer();
-initVimeoPlayer();
-attachmentSwitcher();
-toggleNavListener();
-setStickyBannerPosition();
-/*
-Validation
- */
-subscribeFormValidation();
-
-document.addEventListener('DOMContentLoaded', function(event) {
-	setTimeout(() => setStickyBannerPosition(), 1000);
-
-	/*
-	Preload animation
- */
-	preload();
-});
-
-window.addEventListener('scroll', () => {
-	closeNav();
-});

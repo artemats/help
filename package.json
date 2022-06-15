@@ -6,6 +6,7 @@
     "@splidejs/splide": "^3.6.12",
     "@vimeo/player": "^2.16.4",
     "babel-loader": "^8.2.3",
+    "bootstrap": "^5.2.0-beta1",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.6.0",
     "gsap": "^3.5.1",
@@ -24,7 +25,7 @@
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.7.4"
   },
-  "name": "pulsio_project",
+  "name": "help_cards",
   "version": "1.0.0",
   "description": "[Highway.js](https://highway.js.org/). [GSAP](https://greensock.com/gsap/).",
   "main": "postcss.config.js",

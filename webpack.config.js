@@ -72,7 +72,7 @@ module.exports = {
 		open: false,
 		compress: false,
 		hot: true,
-		port: 3000,
+		port: 3030,
 	},
 	plugins: [
 		...buildHTML(['index']),
