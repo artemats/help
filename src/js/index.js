@@ -2,16 +2,31 @@ import '../sass/index.scss';
 import Tween from 'gsap';
 
 const progress = document.querySelector('#progress');
+const currentValue = document.querySelector('#current-value');
 const goal = 58000;
-const current = 14937 + 14409;
+const current = 18137 + 14559;
 const percent = (( current / goal ) * 100).toFixed(0);
 
+/*
+Value
+ */
 progress.innerHTML = `${percent}%`;
+progress.setAttribute('aria-valuenow', percent);
+currentValue.innerHTML = `${current}`;
+
+/*
+Display percent
+ */
 Tween.to(progress, {
 	width: `${percent}%`,
 });
-progress.setAttribute('aria-valuenow', percent);
+Tween.to(currentValue, {
+	width: `${percent}%`,
+});
 
+/*
+Copy listener
+ */
 const boxes = document.querySelectorAll('.copy-box');
 if (!!boxes.length) {
 	for (let i = 0; i < boxes.length; i++) {
@@ -48,4 +63,4 @@ if (!!boxes.length) {
 	}
 }
 
-//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
+//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
