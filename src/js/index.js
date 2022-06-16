@@ -5,7 +5,7 @@ const progress = document.querySelector('#progress');
 const currentValue = document.querySelector('#current-value');
 const leftValue = document.querySelector('#left-value');
 const goal = 58000;
-const current = 18337 + 14559;
+const current = 18537 + 15099;
 const percent = (( current / goal ) * 100).toFixed(0);
 
 /*
@@ -62,4 +62,4 @@ if (!!boxes.length) {
 	}
 }
 
-//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
+//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
