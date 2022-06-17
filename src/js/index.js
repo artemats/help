@@ -3,9 +3,9 @@ import Tween from 'gsap';
 
 const progress = document.querySelector('#progress');
 const currentValue = document.querySelector('#current-value');
-const leftValue = document.querySelector('#left-value');
+// const leftValue = document.querySelector('#left-value');
 const goal = 58000;
-const current = 38191 + 17721;
+const current = 58000;
 const percent = (( current / goal ) * 100).toFixed(0);
 
 /*
@@ -14,7 +14,7 @@ Value
 progress.innerHTML = `${percent}%`;
 progress.setAttribute('aria-valuenow', percent);
 currentValue.innerHTML = `Зібрано ${current} грн`;
-leftValue.innerHTML = `Залишилося ${goal - current} грн`;
+// leftValue.innerHTML = `Залишилося ${goal - current} грн`;
 
 /*
 Display percent
