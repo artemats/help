@@ -13,7 +13,7 @@ Value
  */
 progress.innerHTML = `${percent}%`;
 progress.setAttribute('aria-valuenow', percent);
-currentValue.innerHTML = `Зібрано ${current} грн`;
+currentValue.innerHTML = `Зібрано > ${current} грн`;
 // leftValue.innerHTML = `Залишилося ${goal - current} грн`;
 
 /*
