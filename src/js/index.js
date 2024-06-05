@@ -5,7 +5,7 @@ const progress = document.querySelector('#progress');
 const currentValue = document.querySelector('#current-value');
 const leftValue = document.querySelector('#left-value');
 const goal = 25000;
-const current = 19610;
+const current = 23519;
 const percent = (( current / goal ) * 100).toFixed(0);
 
 /*
