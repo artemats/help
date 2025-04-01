@@ -4,8 +4,8 @@ import Tween from 'gsap';
 const progress = document.querySelector('#progress');
 const currentValue = document.querySelector('#current-value');
 const leftValue = document.querySelector('#left-value');
-const goal = 25000;
-const current = 23519;
+const goal = 10000;
+const current = 5883;
 const percent = (( current / goal ) * 100).toFixed(0);
 
 /*
